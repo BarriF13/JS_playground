@@ -58,8 +58,21 @@
 // console.log(magic);
 // in const we can change variables inside name and time - but can't change the const itself ---magic
 
-const num = [1,22,44,23];
-console.log(num);
+// const num = [1,22,44,23];
+// console.log(num);
 // num = [34,555]; // can't change it can be added 
-num.push(34 ,555);
-console.log(num);
+// num.push(34 ,555);
+// console.log(num);
+
+// String - number -boolean - Null - Symbols are obejects 
+// Reference Types - objects :
+//Array 
+//object literal 
+const obj = {
+  magic: 'potions',
+  group: 'Witchery'
+}
+//time 
+const time = new Date();
+console.log(time);
+console.log(typeof time);
