@@ -140,21 +140,21 @@
 
 
 //Math objects 
- const x = 100;
- const y = 50;
+//  const x = 100;
+//  const y = 50;
 
- //Simple math with numbers
- value = x+y; // - * % /
+//  //Simple math with numbers
+//  value = x+y; // - * % /
 
-// math with objects - round  - ceil - floor - random - sqrt
+// // math with objects - round  - ceil - floor - random - sqrt
 
-value = Math.PI;
-value = Math.sqrt(65); // square
-value = Math.abs(-66); //absolute
-value = Math.pow( 8,3); // power 
-value = Math.min( 2 ,3 ,1,5) // show the minimum
-value = Math.max( 2 ,3 ,1,5) // show the max
-value = Math.random(); // gives decimal
-// that's how we use random in javascript
-value = Math.floor(Math.random() * 20 + 1) // 20 is the max number that we want as a maximum number , we add ! not ignore zero
- console.log(value);
+// value = Math.PI;
+// value = Math.sqrt(65); // square
+// value = Math.abs(-66); //absolute
+// value = Math.pow( 8,3); // power 
+// value = Math.min( 2 ,3 ,1,5) // show the minimum
+// value = Math.max( 2 ,3 ,1,5) // show the max
+// value = Math.random(); // gives decimal
+// // that's how we use random in javascript
+// value = Math.floor(Math.random() * 20 + 1) // 20 is the max number that we want as a maximum number , we add ! not ignore zero
+//  console.log(value);
