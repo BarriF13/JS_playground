@@ -5,29 +5,36 @@
 // }
 
 const id = 100;
-//Equal to 
-if (id ==101) {
-  console.log ('TADA ')
-} else {
-  console.log('Noway')
-}
-//Not Equal to
+// //Equal to 
+// if (id ==101) {
+//   console.log ('TADA ')
+// } else {
+//   console.log('Noway')
+// }
+// //Not Equal to
 
-if(id != 101 ){
-  console.log ('TADA ')
-} else {
-  console.log('No way')
-}
+// if(id != 101 ){
+//   console.log ('TADA ')
+// } else {
+//   console.log('No way')
+// }
 
-//Equal to Value & Type 
-if (id ===100) {
-  console.log (' Smashing  ')
+// //Equal to Value & Type 
+// if (id ===100) {
+//   console.log (' Smashing  ')
+// } else {
+//   console.log('Noway')
+// }
+// //Equal to Value & Type 
+// if (id !==100) {
+//   console.log (' Smashing  ')
+// } else {
+//   console.log('Noway')
+// }
+
+//Test if undefined 
+if(typeof id !== 'undefined') {
+  console.log(`The ID is ${id}`)
 } else {
-  console.log('Noway')
-}
-//Equal to Value & Type 
-if (id !==100) {
-  console.log (' Smashing  ')
-} else {
-  console.log('Noway')
+  console.log('No ID')
 }
