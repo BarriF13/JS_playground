@@ -4,7 +4,7 @@
 //   do something else
 // }
 
-const id = 100;
+// const id = 100;
 // //Equal to 
 // if (id ==101) {
 //   console.log ('TADA ')
@@ -33,8 +33,20 @@ const id = 100;
 // }
 
 //Test if undefined 
-if(typeof id !== 'undefined') {
-  console.log(`The ID is ${id}`)
-} else {
-  console.log('No ID')
-}
+// if(typeof id !== 'undefined') {
+//   console.log(`The ID is ${id}`)
+// } else {
+//   console.log('No ID')
+// }
+
+// Greater or Less than
+// if(id > 300 ){
+//   console.log('Smashing')
+// } else {
+//   console.log(' naha')
+// }
+
+
+// TERNARY OPERATOR
+const id = 100;
+console.log(id === 100 ? 'Smashing ': 'No Way');
