@@ -30,11 +30,40 @@
 // value = person.getBirthYear();
 // console.log (value );
 
-const wizards = [
-  { name: 'Vata' , age: 22},
-  { name: 'Mimi' , age: 92}
-];
+// const wizards = [
+//   { name: 'Vata' , age: 22},
+//   { name: 'Mimi' , age: 92}
+// ];
 
-for(i = 0 ; i < wizards.length ; i++){
-console.log(wizards[i].name);
-}
+// for(i = 0 ; i < wizards.length ; i++){
+// console.log(wizards[i].name);
+// }
+
+//--------------------date and Time
+
+// let value;
+
+// const today = new Date();
+
+// console.log(today);
+// value = today;
+// console.log(typeof value);
+
+let value;
+
+const today = new Date();
+let birthday = new Date('9-10-1981');
+
+
+// console.log(today);
+// value = birthday;
+value = today.getMonth();
+// value = today.getDay();
+value = today.getDate();
+value = today.getFullYear();
+value = today.getHours();
+value = today.getMinutes();
+ value = today.getTime();
+
+ birthday.setMonth(2);
+console.log(birthday);
