@@ -40,14 +40,20 @@ document.querySelector('li:nth-child(odd)').style.background = '#ccc';//single e
 document.querySelector('li:nth-child(even)').style.background = '#5c47b8';//single element selector so get only first odd
 
 // DOCUMENT By CLASS NAME
-const items = document.getElementsByClassName('collection-item');
-console.log(items);
-console.log(items[2]);
-items[2].style.background ='red';
-items[3].innerText = 'Ma na ma na';
+// const items = document.getElementsByClassName('collection-item');
+// console.log(items);
+// console.log(items[2]);
+// items[2].style.background ='red';
+// items[3].innerText = 'Ma na ma na';
 
 
 //Using it more in scope than globally
-const listItems = document.querySelector('ul').getElementsByClassName('collection-item');
-console.log(listItems);
+// const listItems = document.querySelector('ul').getElementsByClassName('collection-item');
+// console.log(listItems);
 
+// Get element by Tag name 
+const lis = document.getElementsByTagName('li');
+console.log(lis);
+console.log(lis[3]);
+lis[2].style.background ='red';
+lis[3].innerText = 'Ma na ma na';
