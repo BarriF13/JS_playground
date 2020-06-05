@@ -68,3 +68,16 @@ colors.forEach(function(item , index){
   console.log(` ${index}: ${item} `);
   console.log(colors);
 });
+
+// IN LOOPS FOR OBJECTS
+const user = {
+  firstName: 'Barri',
+  lastName: ' Bellucci',
+  age: 26,
+
+}
+for ( let x in user){
+// console.log(x);
+console.log(`${x}: ${user[x]}`);
+
+}
