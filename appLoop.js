@@ -37,3 +37,28 @@
 // }
 // while(i < 10);
 
+// Loop through arrays
+
+const colors = ['blue','black','red','yellow','green'];
+// for(let i = 0; i < colors.length; i++){
+//   console.log(colors[i]);
+// }
+
+// //ForEach 
+// colors.forEach(function(item){
+//   console.log(item);
+// })
+// //or
+//  colors.forEach((item)=>console.log(item))
+
+ //Map an array
+ const users = [
+   {id:1, name: 'ALice'},
+   {id:2, name: 'Tatsiana'},
+   {id:3, name: 'Becks'},
+
+ ];
+ const ids = users.map(function(user){
+   return user.id
+ });
+ console.log(ids)
