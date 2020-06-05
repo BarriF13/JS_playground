@@ -51,14 +51,20 @@ const colors = ['blue','black','red','yellow','green'];
 // //or
 //  colors.forEach((item)=>console.log(item))
 
- //Map an array
- const users = [
-   {id:1, name: 'ALice'},
-   {id:2, name: 'Tatsiana'},
-   {id:3, name: 'Becks'},
+//  //Map an array
+//  const users = [
+//    {id:1, name: 'ALice'},
+//    {id:2, name: 'Tatsiana'},
+//    {id:3, name: 'Becks'},
 
- ];
- const ids = users.map(function(user){
-   return user.id
- });
- console.log(ids)
+//  ];
+//  const ids = users.map(function(user){
+//    return user.id
+//  });
+//  console.log(ids)
+
+//ForEach --- show teo parameter ---show entire array
+colors.forEach(function(item , index){
+  console.log(` ${index}: ${item} `);
+  console.log(colors);
+});
