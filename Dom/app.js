@@ -1,64 +1,32 @@
-let value;
+//1- Creat element
+const li = document.createElement('li');
 
-const list = document.querySelector('ul.collection');
+//2- Add a class
+li.className = 'collection-item';
 
-const listItem = document.querySelector('li.collection-item:first-child');
-
-value = listItem;
-value = list;
-
-//GET child nodes--line break shows as text node on console
+//3-Add id
+li.id = 'new-item';
 
 
-value = list.childNodes;
-value = list.childNodes[0].nodeName;
-value = list.childNodes[3].nodeType;
+//4-Add attribute 
+li.setAttribute('title', 'New Item');
 
+//5- Create text node and append --append means we want to put something inside of ><
+li.appendChild(document.createTextNode('lolo'));
 
-//Type of node list 
-//1- Element
-//2 - Attribute( deprecated)
-//3- Text node
-//8- Comment
-//9- Document itself
-//10 - Doctype
+//7-  Create new link element
+const link = document.createElement('a');
 
+//8-  Add class
+link.className = 'delete-item secondary-content';
 
+//9-  add icon html
+link.innerHTML = '<i class="fa fa-remove"></i>';
 
-// Get children element nodes
+// 10- Append link into li
+li.appendChild(link);
 
-value = list.children;
-value = list.children;
-value = list.children[1];
-list.children[1].textContent='mana mana';
+//6- Append li as child t oul
+document.querySelector('ul.collection').appendChild(li)
 
-// Children of children 
-list.children[3].children[0].id = 'test-link';
-value = list.children[3].children[0];
-
-// First child
-value = list.firstChild; //gives text which is linebreak in node and we don't want so 
-value = list.firstElementChild; //this is more useful
-
-// Last child
-value = list.lastElementChild;
-
-
-//Count child element
-value= list.childElementCount;
-
-// Get Parent Node 
-
-value = listItem.parentNode;
-value = listItem.parentElement;
-
-value = listItem.parentElement.parentElement;
-
-// Get prev sibling
-value = listItem.prevSibling;
-value = listItem.prevElementSibling;
-
-// Get Next sibling --- going up and down on node tree is called traversing the dom (traveling)
-value = listItem.nextSibling;
-value = listItem.nextElementSibling.nextElementSibling;
-console.log(value);
+console.log(li);
