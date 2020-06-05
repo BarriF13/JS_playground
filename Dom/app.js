@@ -38,4 +38,16 @@ document.querySelector('li:nth-child(3)').textContent = 'I am fab';
 // ODD or EVEN
 document.querySelector('li:nth-child(odd)').style.background = '#ccc';//single element selector so get only first odd
 document.querySelector('li:nth-child(even)').style.background = '#5c47b8';//single element selector so get only first odd
-document.querySelectorAll('li:nth-child(odd)').style.color = '#5c4';
+
+// DOCUMENT By CLASS NAME
+const items = document.getElementsByClassName('collection-item');
+console.log(items);
+console.log(items[2]);
+items[2].style.background ='red';
+items[3].innerText = 'Ma na ma na';
+
+
+//Using it more in scope than globally
+const listItems = document.querySelector('ul').getElementsByClassName('collection-item');
+console.log(listItems);
+
