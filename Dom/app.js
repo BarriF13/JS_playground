@@ -52,8 +52,23 @@ document.querySelector('li:nth-child(even)').style.background = '#5c47b8';//sing
 // console.log(listItems);
 
 // Get element by Tag name 
-const lis = document.getElementsByTagName('li');
-console.log(lis);
-console.log(lis[3]);
-lis[2].style.background ='red';
-lis[3].innerText = 'Ma na ma na';
+// const lis = document.getElementsByTagName('li');
+// console.log(lis);
+// console.log(lis[3]);
+// lis[2].style.background ='red';
+// lis[3].innerText = 'Ma na ma na';
+
+//--------below two lines will give us error as reverse is not a function
+// lis.reverse();
+// console.log(lis)
+
+//-----so we have to :Convert  html collection in array
+let lis =  document.getElementsByTagName('li');
+ lis = Array.from(lis);
+lis.reverse();
+
+lis.forEach(function(li, index){
+  console.log(li.className);
+  li.textContent = `${index}: Hello`;
+})
+console.log(lis)
