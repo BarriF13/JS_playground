@@ -25,3 +25,17 @@ const taskTitle = document.getElementById('task-title');
 taskTitle.style.background = 'blue';
 
 // document.querySelector()
+console.log(document.querySelector('#task-title'));
+console.log(document.querySelector('.card-title'));
+console.log(document.querySelector('h5'));
+
+document.querySelector('li').style.color = 'red';
+document.querySelector('ul li').style.color = 'green';
+document.querySelector('li:last-child').style.color = 'yellow';
+document.querySelector('li:nth-child(4)').style.color = 'pink';
+document.querySelector('li:nth-child(3)').textContent = 'I am fab';
+
+// ODD or EVEN
+document.querySelector('li:nth-child(odd)').style.background = '#ccc';//single element selector so get only first odd
+document.querySelector('li:nth-child(even)').style.background = '#5c47b8';//single element selector so get only first odd
+document.querySelectorAll('li:nth-child(odd)').style.color = '#5c4';
