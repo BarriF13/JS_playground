@@ -1,59 +1,38 @@
-// // Replace Element
+// document.querySelector('.clear-tasks').addEventListener('click', function(e){
+//   // e.defaultPrevented();
+//   console.log('Hello world')
+// });
 
-//create element
-const newHeading = document.createElement('h2');
+document.querySelector('.clear-tasks').addEventListener('click', onClick);
 
-//Add id 
-newHeading.id ='task-title';
-// create a new text node
-newHeading.appendChild(document.createTextNode('Task listttt'));
-// Get old heading
-const oldHeading = document.getElementById('task-title');
+function onClick(e){ // e is event object
+  // console.log('mana mana');
+  let value;
 
-// we need the parent to change the child inside the parent
+  value = e;
 
-//Getting the Parent
+  //Event target element
+  value = e.target;
+  value = e.target.id;
+  value = e.target.className;
+  value = e.target.classList;
 
-const cardAction = document.querySelector('.card-action');
-// replace
-cardAction.replaceChild(newHeading , oldHeading);
+  // e.target.innerText = 'hello';
 
+  // Event Type
+value = e.type;
 
-// Remove Element
-const lis = document.querySelectorAll('li');
-const list = document.querySelector('ul');
+// Timestamp
+value = e.timeStamp;
 
+// Coords event relative to the window
+value = e.clientY;
+value = e.clientX;
 
-// Remove list item
-lis[0].remove();
-
-
-//Also we can remove by child
-list.removeChild(lis[2]);
-
+// Coords event relative to the element
+value = e.offsetY;
+value = e.offsetX;
 
 
-//CLasses and Attr
-const firstLi = document.querySelector('li:first-child');
-const link = firstLi.children[0];
-
-let value; 
-//classes
-value = link.className;
-value = link.classList;
-value = link.classList[0];
-
-link.classList.add('test');
-link.classList.remove('test');
-value = link;
-
-//Attr
-value = link.getAttribute('href');
-value = link.setAttribute('href', 'http://google.com');
-value = link.hasAttribute('href');
-value = link.setAttribute('title', 'Google');
-value = link.hasAttribute('title');
-value = link.removeAttribute('title')
-
-value = link;
-console.log(value);
+  console.log(value);
+};
