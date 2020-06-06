@@ -1,38 +1,42 @@
-// document.querySelector('.clear-tasks').addEventListener('click', function(e){
-//   // e.defaultPrevented();
-//   console.log('Hello world')
-// });
-
-document.querySelector('.clear-tasks').addEventListener('click', onClick);
-
-function onClick(e){ // e is event object
-  // console.log('mana mana');
-  let value;
-
-  value = e;
-
-  //Event target element
-  value = e.target;
-  value = e.target.id;
-  value = e.target.className;
-  value = e.target.classList;
-
-  // e.target.innerText = 'hello';
-
-  // Event Type
-value = e.type;
-
-// Timestamp
-value = e.timeStamp;
-
-// Coords event relative to the window
-value = e.clientY;
-value = e.clientX;
-
-// Coords event relative to the element
-value = e.offsetY;
-value = e.offsetX;
+const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
 
 
-  console.log(value);
-};
+// Click (click is one of the type on event object)
+// clearBtn.addEventListener('click', runEvent);
+
+//Double Click
+// clearBtn.addEventListener('dblclick', runEvent);
+
+//Mousedown
+// clearBtn.addEventListener('mousedown', runEvent);
+
+// //MouseUp
+// clearBtn.addEventListener('mouseup', runEvent);
+
+// //Mouseenter
+// card.addEventListener('mouseenter', runEvent);
+
+// //Mouseleave
+// card.addEventListener('mouseleave', runEvent);
+
+// //Mouseover
+// card.addEventListener('mouseover', runEvent);
+
+// //Mouseout
+// card.addEventListener('mouseout', runEvent);
+
+//Mousemove ----using for game 
+card.addEventListener('mousemove', runEvent);
+
+
+// Event Handler 
+function runEvent(e) {
+  console.log(`Event TYPE: ${e.type}`);
+
+heading.textContent = `MouseX : ${e.offsetX}, MouseY : ${e.offsetY} `;
+
+document.body.style.backgroundColor = `rgb(${e.offsetX} , ${e.offsetY}, 90)`;
+
+}
