@@ -1,32 +1,59 @@
-//1- Creat element
-const li = document.createElement('li');
+// // Replace Element
 
-//2- Add a class
-li.className = 'collection-item';
+//create element
+const newHeading = document.createElement('h2');
 
-//3-Add id
-li.id = 'new-item';
+//Add id 
+newHeading.id ='task-title';
+// create a new text node
+newHeading.appendChild(document.createTextNode('Task listttt'));
+// Get old heading
+const oldHeading = document.getElementById('task-title');
+
+// we need the parent to change the child inside the parent
+
+//Getting the Parent
+
+const cardAction = document.querySelector('.card-action');
+// replace
+cardAction.replaceChild(newHeading , oldHeading);
 
 
-//4-Add attribute 
-li.setAttribute('title', 'New Item');
+// Remove Element
+const lis = document.querySelectorAll('li');
+const list = document.querySelector('ul');
 
-//5- Create text node and append --append means we want to put something inside of ><
-li.appendChild(document.createTextNode('lolo'));
 
-//7-  Create new link element
-const link = document.createElement('a');
+// Remove list item
+lis[0].remove();
 
-//8-  Add class
-link.className = 'delete-item secondary-content';
 
-//9-  add icon html
-link.innerHTML = '<i class="fa fa-remove"></i>';
+//Also we can remove by child
+list.removeChild(lis[2]);
 
-// 10- Append link into li
-li.appendChild(link);
 
-//6- Append li as child t oul
-document.querySelector('ul.collection').appendChild(li)
 
-console.log(li);
+//CLasses and Attr
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
+
+let value; 
+//classes
+value = link.className;
+value = link.classList;
+value = link.classList[0];
+
+link.classList.add('test');
+link.classList.remove('test');
+value = link;
+
+//Attr
+value = link.getAttribute('href');
+value = link.setAttribute('href', 'http://google.com');
+value = link.hasAttribute('href');
+value = link.setAttribute('title', 'Google');
+value = link.hasAttribute('title');
+value = link.removeAttribute('title')
+
+value = link;
+console.log(value);
