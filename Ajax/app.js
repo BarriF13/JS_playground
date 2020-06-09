@@ -1,56 +1,63 @@
-document.getElementById('button').addEventListener('click', loadData);
+document.getElementById('button1').addEventListener('click' , loadCustomer);
 
-function loadData() {
-  //-1 Create an XHR object
+document.getElementById('button2').addEventListener('click' , loadCustomers);
+
+
+function loadCustomer(e){
+
   const xhr = new XMLHttpRequest();
-  // Sate 1 
-  //-2 Open property -- to open the file 
-  xhr.open('GET', 'data.txt', true);
+  xhr.open('GET', 'customer.json', true);
 
-  // Optional - used for loaders -- state 3
-  xhr.onprogress = function () {
-    console.log('READYSTATE', xhr.readyState);
-  }
-
-
-  console.log('READYSTATE', xhr.readyState);
-
-  //-3 load the file if everything is ok on port 200
-  xhr.onload = function () {
-    console.log('READYSTATE', xhr.readyState);
+  xhr.onload = function(){
     if (this.status === 200) {
-      // console.log(this.responseText); // response text is the data that is inside the data.txt
+      // Json file needs to parsed first
+      const customer = JSON.parse(this.responseText);
+      const output = `
+        <ul>
+        <li>ID: ${customer.id}</li>
+        <li>Name: ${customer.name}</li>
+        <li>Company: ${customer.company}</li>
+        <li>Phone: ${customer.phone}</li>
+        </ul>
+      `;
 
-      document.getElementById('output').innerHTML = `<h3>${this.responseText}</h3>`;
-    }
+
+      document.getElementById('customer').innerHTML =output;
+    };
   }
+  xhr.send()
 
-  // // Older syntax  we needed to do with on ready state change-- no need to use it
-  // xhr.onreadystatechange = function () {
-  //   console.log('READYSTATE', xhr.readyState);
-  //   if (this.status === 200 && this.readyState === 4) {
-  //     console.log(this.responseText);
-  //   }
-  // }
-  //-4 send the file to show
+}
+// Load customers
+function loadCustomers(e){
 
-  // if there is an error
-  xhr.onerror = function () {
-    console.log('Request error ...');
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'customers.json', true);
+
+  xhr.onload = function(){
+    if (this.status === 200) {
+      // Json file needs to parsed first
+      const customers = JSON.parse(this.responseText);
+      // because it is an array we need to loop through it
+
+      // Instantiate a var for getting the individual customer
+      let output = '';
+
+      customers.forEach(function(customer){
+        output += `
+        <ul>
+        <li>ID: ${customer.id}</li>
+        <li>Name: ${customer.name}</li>
+        <li>Company: ${customer.company}</li>
+        <li>Phone: ${customer.phone}</li>
+        </ul>
+      `;
+      });
+
+
+      document.getElementById('customers').innerHTML = output;
+    };
   }
+  xhr.send()
 
-
-  xhr.send();
-
-  // readyState Values
-  //0: request not initialized
-  //1: server connection established
-  //2: request received
-  //3: processing request
-  //4: request finished and response is ready
-
-  // HTTP Statuses
-  // 200: "ok"
-  // 403: "Forbidden"
-  // 404: "Not Found"
 }
