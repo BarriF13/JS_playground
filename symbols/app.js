@@ -1,28 +1,51 @@
-// Singleton pattern -- rarely use by teachers
+// Factory Pattern -- creating more objects
 
-const Singleton = (function(){
+function MemberFactory(){
+  //Func expression
+  this.createMember = function(name, type){
+    let member;
 
-    let instance;
-
-    function createInstance() {
-      const object = new Object({name: 'Baba'});
-      return object;
+    if(type === 'simple'){
+      member = new SimpleMembership(name);
+    } else if(type === 'standard') {
+      member = new StandardMembership(name);
+    } else if(type === 'super') {
+      member = new SuperMembership(name);
     }
 
-      return {
-        getInstance: function(){
-          if(!instance){
-             instance = createInstance();
-          }
-          return instance;
-        }
+    member.type = type;
 
+    member.define = function(){
+      console.log(`${this.name} (${this.type}): ${this.cost} `)
     }
-})();
 
-const instanceA = Singleton.getInstance();
-const instanceB = Singleton.getInstance();
+    return member;
+  }
+}
 
-console.log(instanceA === instanceB); // gives us true
+// now we need to make constructors for simple - standard - super membership
+const SimpleMembership = function(name){
+  this.name = name;
+  this.cost = '£5';
+}
+const StandardMembership = function(name){
+  this.name = name;
+  this.cost = '£15';
+}
+const SuperMembership = function(name){
+  this.name = name;
+  this.cost = '£35';
+}
 
-// console.log(instanceA);
+const members = [];
+const factory = new MemberFactory(); // gives us specific members
+
+members.push(factory.createMember('Barri', 'super'));
+members.push(factory.createMember('Cyrus', 'standard'));
+members.push(factory.createMember('Ana', 'simple'));
+
+// console.log(members); //this gives us full object
+
+members.forEach((member)=>{
+  member.define();
+})
