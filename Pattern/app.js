@@ -52,4 +52,5 @@ const itemCtrl = (function(){
 })();
 
 itemCtrl.add({id: 1, name: 'Bobo'});
-console.log(itemCtrl.get(1));
+itemCtrl.add({id: 2, name: 'Ana'});
+console.log(itemCtrl.get(2));
